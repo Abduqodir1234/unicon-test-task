@@ -1,0 +1,25 @@
+[
+  {
+    "_id": "0f9f7b7e-856e-4226-9dd5-638fef58b33f",
+    "colName": "auth",
+    "created": "2022-09-13T21:59:48.355Z",
+    "sortNum": 10000,
+    "folders": []
+  },
+  {
+    "_id": "c54bc8ba-371d-43a6-a3e1-d0b38ecb3a4c",
+    "colName": "tasks",
+    "created": "2022-09-13T22:03:37.231Z",
+    "sortNum": 20000,
+    "folders": [],
+    "settings": {
+      "headers": [],
+      "auth": {
+        "type": "bearer",
+        "bearer": "{{token_recipent}}"
+      },
+      "tests": [],
+      "envId": "4ca71575-c6fd-479c-b2dc-ef61995986f7"
+    }
+  }
+]
