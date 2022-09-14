@@ -49,8 +49,10 @@ export class AuthService {
       await UserQueries.create(data);
       return Responses.responseWithCustomMessage('Registered successfully');
     } catch (e) {
+      console.log(e);
+
       if (e instanceof DatabaseError)
-        if (e.detail === 'Key (username)=(kdesavery0) already exists.')
+        if (e.code === '23505')
           return Responses.badRequest('Username already exists');
       return Responses.internalServerError(e);
     }
