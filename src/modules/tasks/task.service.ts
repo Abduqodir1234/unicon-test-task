@@ -6,7 +6,7 @@ import { TaskInterface, TaskStatusEnum } from './types/task.types';
 export class TaskService {
   async doneTaskList(userId: number, offset: number, limit: number) {
     try {
-      const data = await TaskQueries.getDoneTasks(userId,offset,limit);
+      const data = await TaskQueries.getDoneTasks(userId, offset, limit);
 
       return Responses.returnWithData<TaskInterface[]>(data.rows);
     } catch (e) {
