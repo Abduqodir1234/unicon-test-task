@@ -19,8 +19,12 @@ CREATE TABLE
         assignedBy BIGINT REFERENCES users (id) NOT NULL
     );
 
-CREATE INDEX IF NOT EXISTS status_index ON tasks (status);
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
-CREATE INDEX IF NOT EXISTS userId_index ON tasks (userId);
+CREATE EXTENSION IF NOT EXISTS btree_gin;
 
-CREATE INDEX IF NOT EXISTS assignedBy_index ON tasks (assignedBy);
+CREATE INDEX
+    IF NOT EXISTS trgm_userId_index ON tasks USING GIN ("userId" gin_trgm_ops);
+
+CREATE INDEX
+    IF NOT EXISTS trgm_assignedBy_index ON tasks USING GIN ("assignedBy" gin_trgm_ops);
