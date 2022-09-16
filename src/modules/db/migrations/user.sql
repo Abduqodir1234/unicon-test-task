@@ -17,4 +17,4 @@ CREATE EXTENSION IF NOT EXISTS pg_trgm;
 CREATE EXTENSION IF NOT EXISTS btree_gin;
 
 CREATE INDEX
-    IF NOT EXISTS trgm_username_index ON tasks USING GIN ("username" gin_trgm_ops);
+    IF NOT EXISTS trgm_username_index ON users USING GIN ("username" gin_trgm_ops);
